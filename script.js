@@ -363,7 +363,7 @@
 const OWNER_EMAIL = 'manojmore0214@gmail.com';
 // Direct download URL (change the filename if your resume is PDF)
 const RESUME_FILE =
-  'https://raw.githubusercontent.com/itachi4500/Portfolio-Website/main/Resume/Manoj.pdf';
+  'https://raw.githubusercontent.com/itachi4500/Portfolio-Website/main/RESUME_FILE/Manoj_More_Resume.pdf';
 const RESUME_FILENAME = 'Manoj_More_Resume.pdf';
 
 function openResumeModal() {
