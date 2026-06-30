@@ -448,27 +448,16 @@ function submitResumeModal() {
     </svg> Processing…`;
 
   // --- 1. Trigger Resume Download from GitHub ---
-  setTimeout(() => {
-    fetch(RESUME_FILE)
-      .then(res => {
-        if (!res.ok) throw new Error('Download failed');
-        return res.blob();
-      })
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = RESUME_FILENAME;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setTimeout(() => URL.revokeObjectURL(url), 5000);
-      })
-      .catch(() => {
-        // Fallback: open directly in new tab
-        window.open(RESUME_FILE, '_blank');
-      });
-  }, 400);
+setTimeout(() => {
+  const link = document.createElement('a');
+  link.href = RESUME_FILE;
+  link.download = RESUME_FILENAME;
+  link.style.display = 'none';
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}, 300);
 
   // --- 2. Send notification email to Manoj ---
   const now = new Date().toLocaleString('en-IN', {
